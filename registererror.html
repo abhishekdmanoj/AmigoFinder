@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Exists</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .message-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #e44d26; /* Google Material Design Red */
+        }
+
+        .go-back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #e44d26;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .go-back-link:hover {
+            background-color: #d03722;
+        }
+    </style>
+</head>
+<body>
+    <div class="message-container">
+        <h2>There is already an existing user with those credentials. Try again.</h2>
+        <a href="javascript:history.go(-1)" class="go-back-link">Go back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* about.css */
+
+body {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/41294/hero.jpg);
+    background-size: cover;
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+    color: #333333;
+    font-family: 'Inconsolata', monospace;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffcc00;
+}
+
+.main-heading {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #3366cc;
+    text-align: center;
+}
+
+.home-button {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.about-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #ffffff; /* Change color to white */
+}

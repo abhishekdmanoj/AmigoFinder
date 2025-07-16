@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://th.bing.com/th/id/OIP.1QaczbAwqpc_HlKTp8_l6QHaEK?pid=ImgDet&rs=1"); /* Replace with your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Times New Roman", Times, serif; /* Use an elegant font */
+}
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+h1 {
+    color: #000000;
+    text-align: left; /* Align the text to the left */
+    margin: 0; /* Remove default margin */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button {
+    margin: 10px;
+    padding: 15px 40px; /* Make the buttons wider and bigger */
+    background-color: rgba(52, 152, 219, 0.5); /* Set a translucent background color */
+    border: none;
+    border-radius: 10px; /* Make the border radius bigger for rounded corners */
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px; /* Increase the font size */
+    transition: background-color 0.3s;
+}
+.button:hover {
+    background-color: rgba(52, 152, 219, 0); /* Change to a transparent background on hover */
+}
+.heading {
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+}

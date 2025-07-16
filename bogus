@@ -1,0 +1,70 @@
+ $id = $_GET['var'];
+  $sql = "SELECT name, price, units FROM stock WHERE id = $id";
+  $sql1 = "UPDATE stocks set units = units - 1";
+  $result = mysqli_query($con, $sql);
+
+
+  if (mysqli_num_rows($result) > 0) {
+    // Fetch the first row (assuming there's only one row returned)
+    $row = mysqli_fetch_assoc($result);
+
+    // Retrieve the 'price' value from the row and store it in a variable
+    $price = $row['price'];
+  }
+  $sql2 = "UPDATE amigos set points = points - $price";
+
+  $queryResult1 = mysqli_query($con, $sql1);
+$queryResult2 = mysqli_query($con, $sql2);
+
+if ($queryResult1 && $queryResult2) {
+    if (mysqli_affected_rows($con) < 0) {
+        // An error occurred, and either units or points went below 0
+        echo "Error: Units or points cannot be negative.";
+        header("Location: home.php");
+    } }
+      else {
+  $query = mysqli_query($con, $sql);
+  
+  if ($query) {
+      $row = mysqli_fetch_assoc($query);
+      
+      if ($row) {
+          $name = $row['name'];
+          $price = $row['price'];
+          ?>
+          <script>
+              swal({
+                  title: "Success",
+                  text: "Name: <?php echo $name; ?>, Price: <?php echo $price; ?>",
+                  icon: "success"
+              });
+          </script>
+
+
+    	<?php
+
+    }
+    else{
+
+    	?>
+
+    	<script>
+
+    	swal({
+         title: "Failed",
+         text: "Data not insertd",
+         icon: "error",
+         });
+
+
+
+    	</script>
+
+    	<?php
+
+
+    }
+
+
+ }
+ } 

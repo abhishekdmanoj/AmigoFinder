@@ -1,0 +1,63 @@
+body {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/41294/hero.jpg);
+    background-size: cover;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333333;
+}
+
+.main-heading {
+    font-size: 36px;
+    color: #ff9900;
+}
+
+.home-button {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.contact-info div {
+    text-align: center;
+}
+
+/* Increase font size for all text within body except headings */
+body *:not(h1, h2, h3, h4, h5, h6) {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 24px;
+    color: #ffcc00;
+}
+
+.phone {
+    font-size: 18px;
+    color: #66ccff;
+}
+
+.email {
+    font-size: 18px;
+    color: #99ff99;
+}

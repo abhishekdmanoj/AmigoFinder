@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/loginstyle.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/regstyle.css">
+
+    <!-- form stuff -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <style>
+        /* Custom CSS for the navigation bar */
+        .navbar-brand {
+          margin-right: 50px; /* Add margin to the right of the brand */
+        }
+      
+        .navbar-nav .nav-item {
+          margin-right: 20px; /* Add margin to the right of each navigation item */
+        }
+      </style>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#" style="font-size: 30px;">AmigoFinder</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Help</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="image-container">
+        <img src="https://images.pexels.com/photos/5554303/pexels-photo-5554303.jpeg" alt="Your Image"> <!-- IMAGE HOME-->
+        <div class="text-overlay">
+            <h1 class = "display-2">Register Now To Become An Amigo</h1>
+            <div>
+              <form class = "regform" method="POST" action="http://localhost/filesa/phps/registration.php">
+                  <!-- User Type Selection -->
+                  <label class = "reglabel" for="user_type">Select User Type:</label>
+                  <select id="user_type" name="user_type" required>
+                      <option>--Select--</option>
+                      <option value="amigo">Amigo</option>
+                      <option value="finder">Finder</option>
+                  </select>
+      
+                  <!-- Common Registration Fields -->
+                  <div class="puchi">
+                    <div class="common-fields">
+                        <label class = "reglabel" for="username">Username or Email:</label>
+                        <input class = "reginput" type="text" id="username" name="username" required>
+        
+                        <label class = "reglabel" for="password">Password:</label>
+                        <input class = "reginput" type="password" id="password" name="password" required>
+        
+                        <label class = "reglabel" for="gender">Gender:</label>
+                        <select id="gender" name = "gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+        
+                        <label class = "reglabel" for="age">Age:</label>
+                        <input class = "reginput" type="number" id="age" name = "age" required>
+        
+                    </div>
+      
+                    <!-- Additional Fields for Amigo User -->
+                    <div class="amigo-fields" style="display: none;">
+                        <label class = "reglabel" for="amigolanguageprimary">Primary language spoken:</label>
+                        <input class = "reginput" type="text" id="amigolanguageprimary" name="amigolanguageprimary">
+        
+                        <label class = "reglabel" for="amigolanguagesecondary">Secondary language spoken:</label>
+                        <input class = "reginput" type="text" id="amigolanguagesecondary" name="amigolanguagesecondary">
+        
+                        <label class = "reglabel" for="contactnumber">Contact number:</label>
+                        <input class = "reginput" type="number" id="contactnumber" name="contactnumber">
+
+                        <label class = "reglabel" for="city">City:</label>
+                        <input class = "reginput" type="text" id="city" name="city">
+
+                        <label class = "reglabel" for="street">Street:</label>
+                        <input class = "reginput" type="text" id="street" name="street">
+
+
+        
+                    </div>
+        
+                    <!-- Additional Fields for Finder User -->
+                    <div class="finder-fields" style="display: none;">
+                        <!--<label class = "reglabel" for="finder_info">Finder Information:</label>
+                        <input class = "reginput" type="text" id="finder_info" name="finder_info">-->
+                    </div>
+                  </div>
+      
+                  <button class = "regbutton" type="submit" name = "register">Register</button>
+              </form>
+          </div>
+      
+          <script>
+              document.getElementById("user_type").addEventListener("change", function () {
+                  var userType = this.value;
+                  var amigoFields = document.querySelector(".amigo-fields");
+                  var finderFields = document.querySelector(".finder-fields");
+          
+                  if (userType === "amigo") {
+                      amigoFields.style.display = "block";
+                      finderFields.style.display = "none";
+                  } else if (userType === "finder") {
+                      amigoFields.style.display = "none";
+                      finderFields.style.display = "block";
+                  } else {
+                      amigoFields.style.display = "none";
+                      finderFields.style.display = "none";
+                  }
+              });
+          </script>
+          </div>
+          </div>
+</body>
+</html>

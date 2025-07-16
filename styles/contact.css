@@ -1,0 +1,56 @@
+/* contact.css */
+
+body {
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/41294/hero.jpg');
+    background-size: cover;
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+    color: #333333;
+    font-family: 'Inconsolata', monospace;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #089bea;
+}
+
+.main-heading {
+    font-size: 2.5em;
+    text-align: center; /* Ensure text is centered */
+}
+
+.home-button {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+/* Increase font size for all text within .contact-content */
+.contact-content *:not(h1, h2, h3, h4, h5, h6) {
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+
+.contact-content p {
+    color: #ffffff; /* Change color to white */
+}
+
+.email, .phone {
+    font-weight: bold;
+    color: #ffcc00;
+}
